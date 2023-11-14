@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAws, faGithub, faJs, faLinkedin, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faAws, faCss3, faCss3Alt, faGithub, faHtml5, faJs, faLinkedin, faNodeJs, faPython, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faNode } from '@fortawesome/free-brands-svg-icons/faNode';
 
@@ -34,6 +34,9 @@ export default function Home() {
         <FontAwesomeIcon icon={faNode} className='text-6xl m-2' />
         <FontAwesomeIcon icon={faReact} className='text-6xl m-2' />
         <FontAwesomeIcon icon={faAws} className='text-6xl m-2' />
+        <FontAwesomeIcon icon={faHtml5} className='text-6xl m-2' />
+        <FontAwesomeIcon icon={faCss3Alt} className='text-6xl m-2' />
+        <FontAwesomeIcon icon={faSass} className='text-6xl m-2' />
       </div>
     </div>
   );
