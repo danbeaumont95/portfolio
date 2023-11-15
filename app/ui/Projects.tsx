@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 export default function Projects() {
 return (
-  <div className="bg-[#F9F9F9] pt-40 flex w-full justify-center flex-col items-center">
+  <div id="projects" className="bg-[#F9F9F9] pt-40 flex w-full justify-center flex-col items-center">
     <div style={{margin: '0 auto', width: '70%'}} className="flex text-left">
 
     <Stack spacing={4}>

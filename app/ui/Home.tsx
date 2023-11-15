@@ -6,7 +6,7 @@ import { faNode } from '@fortawesome/free-brands-svg-icons/faNode';
 
 export default function Home() {
   return (
-    <div className='bg-[#F9F9F9] h-screen flex w-full justify-center flex-col items-center'>
+    <div id="home" className='bg-[#F9F9F9] h-screen flex w-full justify-center flex-col items-center'>
       <div className="flex items-center px-4">
         <div className='mx-48 my-0 flex items-center justify-between'>
           <div>
