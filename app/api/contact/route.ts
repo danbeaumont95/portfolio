@@ -11,6 +11,7 @@ export async function POST(req: any) {
     }
   } catch (error) {
     console.log(error, 'error1')
+    const response = new Response();
+    return response
   }
-  return {}
 }
