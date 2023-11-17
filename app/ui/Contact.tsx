@@ -44,7 +44,7 @@ export default function Contact() {
     e.preventDefault();
     const data = JSON.stringify(formData);
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api', {
         method: 'POST',
         body: data,
       })
