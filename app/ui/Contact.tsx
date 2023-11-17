@@ -50,6 +50,11 @@ export default function Contact() {
       })
       if (response.ok) {
         toast.success("Message sent! I will be in contact within 24 hours.")
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        })
       }
       else {
         toast.error("Unable to send. Please try again later.")}
@@ -108,7 +113,7 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <BsPerson color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input type="text" size="md" value={formData.name}/>
                         </InputGroup>
                       </FormControl>
                       <FormControl id="email" onChange={handleChange}>
@@ -117,7 +122,7 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <MdOutlineEmail color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input type="text" size="md" value={formData.email}/>
                         </InputGroup>
                       </FormControl>
                       <FormControl id="message" onChange={handleChange}>
@@ -128,6 +133,7 @@ export default function Contact() {
                             borderRadius: 'gray.300',
                           }}
                           placeholder="message"
+                          value={formData.message}
                         />
                       </FormControl>
                       <FormControl id="name" float="right">
