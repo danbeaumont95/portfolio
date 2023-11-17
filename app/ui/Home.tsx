@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAws, faCss3, faCss3Alt, faGithub, faHtml5, faJs, faLinkedin, faNodeJs, faPython, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faAws, faCss3Alt, faGithub, faHtml5, faJs, faLinkedin, faPython, faReact, faSass } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faNode } from '@fortawesome/free-brands-svg-icons/faNode';
 

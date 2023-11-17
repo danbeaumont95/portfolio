@@ -1,4 +1,5 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+import { Link } from '@chakra-ui/next-js'
 
 export default function Card({image, title, text, url, github, buttonColour, secondButtonColour}: {image: string; title: string; text: string; url: string; github: string; buttonColour?: string; secondButtonColour?: string;}) {
   return (

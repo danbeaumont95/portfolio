@@ -1,5 +1,4 @@
-'use client'
-
+'use client';
 import {
   Container,
   Flex,
@@ -16,22 +15,23 @@ import {
   InputLeftElement,
   Textarea,
   Stack,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react'
 import {
   MdOutlineEmail,
 } from 'react-icons/md'
 import { BsPerson } from 'react-icons/bs'
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const { name, email, message } = formData;
-  console.log({ name, email, message } )
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {  value, id } = e.target;
     setFormData({
@@ -40,24 +40,38 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit =  async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    const data = JSON.stringify(formData);
     try {
       const response = await fetch('/api/contact', {
-        method: 'post',
-        body: new URLSearchParams(formData),
-      });
-      if (!response.ok) {
-        throw new Error(`Invalid response: ${response.status}`);
+        method: 'POST',
+        body: data,
+      })
+      if (response.ok) {
+        toast.success("Message sent! I will be in contact within 24 hours.")
       }
-      alert('Thanks for contacting us, we will get back to you soon!');
+      else {
+        toast.error("Unable to send. Please try again later.")}
     } catch (err) {
-      console.error(err);
-      alert("We can't submit the form, try again later?");
+      toast.error("Unable to send. Please try again later.")
     }
   };
 
   return (
+    <div>
+    <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
     <Container id="contact" bg="#ffffff" maxW="full" mt={0} centerContent overflow="hidden" style={{paddingTop: 80}}>
       <Flex>
         <Box
@@ -117,7 +131,7 @@ export default function Contact() {
                         />
                       </FormControl>
                       <FormControl id="name" float="right">
-                        <Button variant="solid" bg="#0D74FF" color="white" _hover={{}}>
+                        <Button variant="solid" bg="#0D74FF" color="white" _hover={{}} onClick={handleSubmit}>
                           Send Message
                         </Button>
                       </FormControl>
@@ -130,5 +144,6 @@ export default function Contact() {
         </Box>
       </Flex>
     </Container>
+    </div>
   )
 }
