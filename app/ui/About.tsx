@@ -1,15 +1,23 @@
 
 import SplitWithImage from './SplitWithImage';
 import { aboutText } from '../lib/data';
+import { Box } from '@chakra-ui/react';
 
 export default function About() {
-return  (   
-<div id="about" className='bg-[#ffffff] h-screen flex w-full justify-center flex-col items-center'>
-  <SplitWithImage
-    image={"/about_image.webp"}
-    title={'A dedicated full stack developer.'}
-    text={aboutText}
-  />
-</div>
-)
+return (
+  <Box
+    id="about"
+    bg={['#ffffff', null, null, null, null, '#ffffff']}
+    minH="100vh"
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
+  >
+    <SplitWithImage
+      image={'/about_image.webp'}
+      title={'A dedicated full stack developer.'}
+      text={aboutText}
+    />
+  </Box>
+);
 }
