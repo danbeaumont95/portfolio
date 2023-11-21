@@ -3,6 +3,7 @@ import { Box, Flex, Stack, Text } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
+import { Link } from '@chakra-ui/next-js';
 
 export default function Home() {
   return (
@@ -29,8 +30,12 @@ export default function Home() {
           Hi, Im Dan Beaumont. A passionate full-stack developer based in West Yorkshire, England. 📍
         </Text>
           <Flex justifyContent={{ base: 'center', md: 'flex-start' }} marginTop="2rem">
+            <Link href={'https://github.com/danbeaumont95'} target="_blank">
             <FontAwesomeIcon icon={faGithub} className='text-3xl m-2 ml-0' />
+            </Link>
+            <Link href={'https://www.linkedin.com/in/daniel-beaumont/'} target="_blank">
             <FontAwesomeIcon icon={faLinkedin} className='text-3xl m-2 ml-0' />
+            </Link>
           </Flex>
         </Box>
         <Box className="circular_image" textAlign="center" marginTop={{ base: '6rem', md: '0' }} order={{ base: '-1', md: '1' }}>
@@ -44,7 +49,7 @@ export default function Home() {
         </Box>
       </Flex>
     </Box>
-      <Stack direction="row" spacing={4} justifyContent="center" marginTop={{base: 0, md: "8rem"}} width={{base: '80%', md: '100%'}}>
+      <Stack direction="row" spacing={4} justifyContent="center" marginTop={{base: 0, md: "8rem"}} width={{base: '100%', md: '100%'}} alignItems={'center'} display={'flex'} alignContent={'center'} paddingRight={{base: '2rem', md: '0'}} paddingLeft={{base: '2rem', md: '0'}}>
         <FaJs className='text-6xl' />
         <FaPython className='text-6xl' />
         <FaNode className='text-6xl' />
